@@ -63,9 +63,10 @@ def matcher(value, options):
 
 
 def get_config():
+    default_prefix = '!'
     parser = argparse.ArgumentParser(description='Start up sprawlbot.')
     parser.add_argument('--token', '-t')
-    parser.add_argument('--prefix', '-p', default='!')
+    parser.add_argument('--prefix', '-p', default=default_prefix)
     parser.add_argument('--reset', '-r', action='store_true')
     parser.add_argument('--setup', '-s', action='store_true')
     args = parser.parse_args()
@@ -77,17 +78,13 @@ def get_config():
     try:
         with open('config.json') as f:
             config = json.load(f)
-            token = config.get('token')
-            prefix = config.get('prefix')
+            args.token = args.token or config.get('token')
+            args.prefix = args.prefix or config.get('prefix')
     except:
         print('Config file not found.')
-        token = None
-        prefix = '!'
-    args.token = args.token or token
-    args.prefix = args.prefix or prefix
 
     if args.setup or not args.token:
-        conf = settings_dialog()
+        conf = settings_dialog(default_prefix)
         args.token = conf.get('token')
         args.prefix = conf.get('prefix')
         with open('config.json', 'w') as f:
@@ -97,11 +94,13 @@ def get_config():
     if not args.token:
         print('Error: Token not found.')
         sys.exit()
+    if not args.prefix:
+        args.prefix = default_prefix
 
     return args
 
 
-def settings_dialog():
+def settings_dialog(default_prefix):
     print(
         'Please enter your bot\'s token ' +
         '(from https://discordapp.com/developers/applications/me)'
@@ -111,12 +110,13 @@ def settings_dialog():
         print('No token entered...')
         sys.exit()
     prefix = input(
-        'Enter the bot\'s command prefix (leave blank for "!"): '
+        'Enter the bot\'s command prefix ' +
+        '(leave blank for "{}"): '.format(default_prefix)
     ).strip()
 
     return {
         'token': token,
-        'prefix': prefix or '!',
+        'prefix': prefix or default_prefix,
     }
 
 
