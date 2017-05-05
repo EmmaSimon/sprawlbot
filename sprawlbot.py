@@ -90,10 +90,9 @@ def get_config():
         conf = settings_dialog()
         args.token = conf.get('token')
         args.prefix = conf.get('prefix')
+        with open('config.json', 'w') as f:
+            json.dump(vars(args), f, indent=4, sort_keys=True)
     del args.setup
-
-    with open('config.json', 'w') as f:
-        json.dump(vars(args), f, indent=4, sort_keys=True)
 
     if not args.token:
         print('Error: Token not found.')
@@ -136,6 +135,3 @@ if __name__ == '__main__':
     except discord.errors.LoginFailure:
         print('Could not log in to Discord. Check that your token is correct.')
         client.close()
-        with open('config.json', 'w') as f:
-            config.token = None
-            json.dump(vars(config), f, indent=4, sort_keys=True)
