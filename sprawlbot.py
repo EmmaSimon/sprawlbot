@@ -36,7 +36,7 @@ async def on_message(message):
         )
         match = matcher(value, tags.keys())
         output = 'Couldn\'t find that tag'
-        output = '+{}: {}'.format(
+        output = '+*{}*: {}'.format(
             match, tags.get(match, 'Description not found')
         )
         if output.endswith('(range)'):
