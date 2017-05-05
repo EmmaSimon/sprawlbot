@@ -85,11 +85,11 @@ def get_config():
 
     if args.setup or not args.token:
         conf = settings_dialog(default_prefix)
+        del args.setup
         args.token = conf.get('token')
         args.prefix = conf.get('prefix')
         with open('config.json', 'w') as f:
             json.dump(vars(args), f, indent=4, sort_keys=True)
-    del args.setup
 
     if not args.token:
         print('Error: Token not found.')
