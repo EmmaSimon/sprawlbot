@@ -73,11 +73,11 @@ def get_config():
     parser.add_argument('--prefix', '-p', default=default_prefix)
     parser.add_argument('--reset', '-r', action='store_true')
     parser.add_argument('--setup', '-s', action='store_true')
+    parser.add_argument('--no-prompt', action='store_true')
     args = parser.parse_args()
 
     if args.reset:
         os.remove('config.json')
-    del args.reset
 
     try:
         with open('config.json') as f:
@@ -87,13 +87,15 @@ def get_config():
     except:
         print('Config file not found.')
 
-    if args.setup or not args.token:
+    if not args.no_prompt and args.setup or not args.token:
         conf = settings_dialog(default_prefix)
-        del args.setup
         args.token = conf.get('token')
         args.prefix = conf.get('prefix')
         with open('config.json', 'w') as f:
-            json.dump(vars(args), f, indent=4, sort_keys=True)
+            json.dump({
+                'token': args.token,
+                'prefix': args.prefix,
+            }, f, indent=4, sort_keys=True)
 
     if not args.token:
         print('Error: Token not found.')

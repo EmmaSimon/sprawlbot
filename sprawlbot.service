@@ -1,0 +1,14 @@
+[Unit]
+Description=Sprawl-DiscordBot
+After=multi-user.target
+[Service]
+WorkingDirectory={install path}
+User={username}
+Group={username}
+ExecStart=/usr/local/bin/python3.5 {install path}/sprawlbot.py --no-prompt
+Type=idle
+Restart=always
+RestartSec=15
+
+[Install]
+WantedBy=multi-user.target
