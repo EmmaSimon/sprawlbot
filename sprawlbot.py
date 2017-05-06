@@ -26,7 +26,11 @@ async def on_message(message):
     message_text = message.content
     if not message_text.startswith(config.prefix):
         return
-    key, value = message_text.lstrip(config.prefix).lower().split(maxsplit=1)
+
+    split = message_text.lstrip(config.prefix).lower().split(maxsplit=1)
+    if len(split) < 2:
+        return
+    key, value = split
     key = key.strip().lower()
     value = value.strip().lower()
 
