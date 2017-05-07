@@ -30,44 +30,41 @@ async def on_message(message):
     split = message_text.lstrip(config.prefix).lower().split(maxsplit=1)
     if len(split) < 2:
         return
-    key, value = split
-    key = key.strip().lower()
-    value = value.strip().lower()
+    command, term = split
+    command = command.strip().lower()
+    term = term.strip().lower()
 
-    if key in ['tag', 'tags']:
-        tmp = await client.send_message(
-            message.channel, 'Looking through tags...'
+    options = {
+        ('tag', 'tags'): {
+            'descriptions': tags,
+            'output': '+*{key}*: {value}',
+        },
+        ('move', 'moves'): {
+            'descriptions': moves,
+        },
+        ('cyber', 'cyberwear'): {
+            'descriptions': cyberwear,
+        },
+    }
+    selected = None
+    for command_set in options:
+        if command in command_set:
+            selected = options.get(command_set)
+            break
+    if not selected:
+        return
+
+    match = matcher(term, selected.get('descriptions', {}).keys())
+    output = selected.get('output', '{value}').format(
+            key=match, value=selected.get(
+                'descriptions', {}
+            ).get(match, 'Description not found')
         )
-        match = matcher(value, tags.keys())
-        output = 'Couldn\'t find that tag'
-        output = '+*{}*: {}'.format(
-            match, tags.get(match, 'Description not found')
-        )
-        if output.endswith('(range)'):
+    if output.endswith('(range)'):
             output = output.lstrip('+')
-        await client.edit_message(tmp, output)
-    elif key in ['move', 'moves']:
-        tmp = await client.send_message(
-            message.channel, 'Looking through moves...'
-        )
-        match = matcher(value, moves.keys())
-        output = 'Couldn\'t find that move'
-        if match:
-            output = '{}'.format(
-                moves.get(match, 'Couldn\'t find that move')
-            )
-        await client.edit_message(tmp, output)
-    elif key in ['cyber', 'cyberwear']:
-        tmp = await client.send_message(
-            message.channel, 'Looking through cyberwear...'
-        )
-        match = matcher(value, cyberwear.keys())
-        output = 'Couldn\'t find that cyberwear'
-        if match:
-            output = '{}'.format(
-                cyberwear.get(match, 'Description not found')
-            )
-        await client.edit_message(tmp, output)
+    await client.send_message(
+        message.channel, output
+    )
 
 
 def matcher(value, options):
