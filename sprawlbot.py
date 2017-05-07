@@ -57,6 +57,17 @@ async def on_message(message):
                 moves.get(match, 'Couldn\'t find that move')
             )
         await client.edit_message(tmp, output)
+    elif key in ['cyber', 'cyberwear']:
+        tmp = await client.send_message(
+            message.channel, 'Looking through cyberwear...'
+        )
+        match = matcher(value, cyberwear.keys())
+        output = 'Couldn\'t find that cyberwear'
+        if match:
+            output = '{}'.format(
+                cyberwear.get(match, 'Description not found')
+            )
+        await client.edit_message(tmp, output)
 
 
 def matcher(value, options):
@@ -131,9 +142,10 @@ if __name__ == '__main__':
 
     with open('tags.json') as f:
         tags = json.load(f)
-
     with open('moves.json') as f:
         moves = json.load(f)
+    with open('cyber.json') as f:
+        cyberwear = json.load(f)
 
     try:
         print('Starting sprawlbot...')
