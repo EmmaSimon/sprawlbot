@@ -2,6 +2,7 @@
 import argparse
 import json
 import os
+import random
 import sys
 
 import discord
@@ -45,6 +46,10 @@ async def on_message(message):
         ('cyber', 'cyberwear'): {
             'descriptions': cyberwear,
         },
+        ('roll',): {
+            'function': roll,
+            'descriptions': moves,
+        },
     }
     selected = None
     for command_set in options:
@@ -60,6 +65,8 @@ async def on_message(message):
                 'descriptions', {}
             ).get(match, 'Description not found')
         )
+    if selected.get('function'):
+        output = selected.get('function')(match, selected, message)
     if output.endswith('(range)'):
             output = output.lstrip('+')
     await client.send_message(
@@ -72,6 +79,16 @@ def matcher(value, options):
     if not match:
         return None
     return match[0]
+
+
+def roll(match, selected, message):
+    dice = random.randint(1, 6), random.randint(1, 6)
+    total = dice[0] + dice[1]
+    return '{} 🎲 ({} + {}) = {}\n{}'.format(
+        message.author.mention, *dice, total, selected.get(
+                'descriptions', {}
+            ).get(match, 'Description not found')
+    )
 
 
 def get_config():
