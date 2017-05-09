@@ -1,0 +1,24 @@
+{
+  "acquire agricultural property": {
+    "10+": "you survive until the medics arrive",
+    "6-": "you bleed out on the street",
+    "7-9": "you survive at a cost. Pick one: owned, substandard treatment (-1 to a stat), cyberware damage (give one piece of cyberware a negative tag)",
+    "header": "**Acquire Agricultural Property** *(meat)*\n\nWhen you hit 0000 on your Harm Clock, roll Meat"
+  },
+  "act under pressure": {
+    "10+": "you do it, no problem",
+    "7-9": "you stumble, hesitate, or flinch: the MC will offer you a worse outcome, hard bargain, or ugly choice",
+    "header": "**Act Under Pressure** *(cool)*\n\nWhen you race against the clock, act while in danger or act to avoid danger, roll Cool."
+  },
+  "apply first aid": {
+    "10+": "if their Harm Clock is at 2100 or less, reduce their harm by two segments. If their Harm Clock is at more than 2100, reduce their harm by one segment",
+    "7-9": "reduce their harm by one segment. If their Harm Clock is still at more than 2100, they take -1 ongoing until they receive proper medical attention",
+    "header": "**Apply First Aid** *(cool)*\n\nWhen you treat someone's wounds using appropriate medical equipment, roll Cool."
+  },
+  "assess": {
+    "10+": "gain 3 hold",
+    "7-9": "gain 1 hold",
+    "header": "**Assess** *(edge)*\n\nWhen you closely study a person, place or situation, or when you quickly size up an opponent or a charged situation, roll Edge.",
+    "list": "In the ensuing action, you may spend 1 hold at any time to ask the MC a question from the list below if your examination could have revealed the answer. The MC may ask you questions to clarify your intent. Take +1 forward when acting on the answers.\n\n* What potential complication do I need to be wary of?\n* What do I notice despite an effort to conceal it?\n* How is ______ vulnerable to me?\n* How can I avoid trouble or hide here?\n* What is my best way in/way out/way past?\n* Where can I gain the most advantage?\n* Who or what is my biggest threat in this situation?\n* Who or what is in control here?"
+  }
+}

@@ -49,7 +49,7 @@ async def on_message(message):
         },
         ('roll',): {
             'function': roll,
-            'descriptions': moves,
+            'descriptions': rollable,
         },
     }
     selected = None
@@ -96,10 +96,26 @@ def roll(match, selected, term, message):
             total += int(num)
         modify_text = '{} {} '.format(sign, num)
     roll_text = '🎲 ({} + {}) {}= {}'.format(*dice, modify_text, total)
-    return '{} {}\n{}'.format(
-        message.author.mention, roll_text, selected.get(
-                'descriptions', {}
-            ).get(match, 'Description not found')
+    move = selected.get('descriptions', {}).get(match)
+    outcomes = [
+        ('7+', lambda x: x >= 7),
+        ('10+', lambda x: x >= 10),
+        ('7-9', lambda x: 7 <= x <= 9),
+        ('6-', lambda x: x <= 6),
+    ]
+    results = ''
+    for outcome in outcomes:
+        if outcome[0] in move and outcome[1](total):
+            results = '{}**{}:** {}\n'.format(
+                results, outcome[0], move.get(outcome[0])
+            )
+        elif outcome[0] == '6-' and outcome[1](total):
+            results = '{}**Miss...**\n'.format(results)
+    if not outcomes[3][1](total) and move.get('list'):
+        results = '{}\n{}'.format(results, move.get('list'))
+
+    return '{} {}\n{}\n\n{}'.format(
+        message.author.mention, roll_text, move.get('header'), results
     )
 
 
@@ -170,6 +186,8 @@ if __name__ == '__main__':
         tags = json.load(f)
     with open('moves.json') as f:
         moves = json.load(f)
+    with open('rollable.json') as f:
+        rollable = json.load(f)
     with open('cyber.json') as f:
         cyberwear = json.load(f)
 
