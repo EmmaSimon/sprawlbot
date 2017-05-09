@@ -3,6 +3,7 @@ import argparse
 import json
 import os
 import random
+import re
 import sys
 
 import discord
@@ -66,7 +67,7 @@ async def on_message(message):
             ).get(match, 'Description not found')
         )
     if selected.get('function'):
-        output = selected.get('function')(match, selected, message)
+        output = selected.get('function')(match, selected, term, message)
     if output.endswith('(range)'):
             output = output.lstrip('+')
     await client.send_message(
@@ -81,11 +82,22 @@ def matcher(value, options):
     return match[0]
 
 
-def roll(match, selected, message):
+def roll(match, selected, term, message):
     dice = random.randint(1, 6), random.randint(1, 6)
     total = dice[0] + dice[1]
-    return '{} 🎲 ({} + {}) = {}\n{}'.format(
-        message.author.mention, *dice, total, selected.get(
+    modifier = re.search(r'^([+-])([0-9]+)|([+-])([0-9]+)$', term)
+    modify_text = ''
+    if modifier:
+        sign = modifier.group(1) or modifier.group(3)
+        num = modifier.group(2) or modifier.group(4)
+        if sign == '-':
+            total -= int(num)
+        if sign == '+':
+            total += int(num)
+        modify_text = '{} {} '.format(sign, num)
+    roll_text = '🎲 ({} + {}) {}= {}'.format(*dice, modify_text, total)
+    return '{} {}\n{}'.format(
+        message.author.mention, roll_text, selected.get(
                 'descriptions', {}
             ).get(match, 'Description not found')
     )
