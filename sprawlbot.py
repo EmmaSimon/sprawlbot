@@ -49,7 +49,8 @@ async def on_message(message):
         },
         ('roll',): {
             'function': roll,
-            'descriptions': rollable,
+            'descriptions': moves,
+            'output': '{mention} {function}'
         },
     }
     selected = None
@@ -61,15 +62,24 @@ async def on_message(message):
         return
 
     match = matcher(term, selected.get('descriptions', {}).keys())
-    output = selected.get('output', '{value}').format(
-            key=match, value=selected.get(
-                'descriptions', {}
-            ).get(match, 'Description not found')
-        )
+    match_content = selected.get(
+        'descriptions', {}
+    ).get(match, 'Description not found')
+    if isinstance(match_content, dict):
+        match_content = format_rollable(move=match_content)
     if selected.get('function'):
-        output = selected.get('function')(match, selected, term, message)
+        output = selected.get('output', '{function}').format(
+            function=selected.get('function')(
+                match=match, selected=selected, term=term
+            ), key=match, value=match_content, mention=message.author.mention,
+        )
+    else:
+        output = selected.get('output', '{value}').format(
+            key=match, value=match_content, mention=message.author.mention,
+        )
+
     if output.endswith('(range)'):
-            output = output.lstrip('+')
+        output = output.lstrip('+')
     await client.send_message(
         message.channel, output
     )
@@ -82,10 +92,50 @@ def matcher(value, options):
     return match[0]
 
 
-def roll(match, selected, term, message):
+def format_rollable(move=None, roll=None):
+    if not move:
+        return ''
+    outcome_order = ['7+', '10+', '7-9', '6-']
+    include = []
+    if roll:
+        result = ''
+        outcome_tests = {
+            '7+': lambda x: x >= 7,
+            '10+': lambda x: x >= 10,
+            '7-9': lambda x: 7 <= x <= 9,
+            '6-': lambda x: x <= 6,
+        }
+        for outcome in outcome_order:
+            if outcome_tests.get(outcome)(roll):
+                if outcome == '7+' and move.get('if_success'):
+                    result = move.get('if_success')
+                elif outcome == '6-' and outcome not in move.get('outcomes'):
+                    result = '***Miss...***\n\n'
+                if outcome not in move.get('outcomes'):
+                    continue
+                include.append(outcome)
+    else:
+        for outcome in outcome_order:
+            if outcome not in move.get('outcomes'):
+                continue
+            include.append(outcome)
+        result = move.get('if_success', '')
+
+    return '{}\n\n{}\n{}{}'.format(
+        move.get('before', None),
+        ''.join([
+            '**{}**: {}\n'.format(
+                outcome, move.get('outcomes', {}).get(outcome)
+            ) for outcome in include
+        ]),
+        result, move.get('after', '')
+    )
+
+
+def roll(match=None, selected=None, term=''):
     dice = random.randint(1, 6), random.randint(1, 6)
     total = dice[0] + dice[1]
-    modifier = re.search(r'^([+-])([0-9]+)|([+-])([0-9]+)$', term)
+    modifier = re.search(r'^([+-]) *([0-9]+)|([+-]) *([0-9]+)$', term)
     modify_text = ''
     if modifier:
         sign = modifier.group(1) or modifier.group(3)
@@ -97,25 +147,8 @@ def roll(match, selected, term, message):
         modify_text = '{} {} '.format(sign, num)
     roll_text = '🎲 ({} + {}) {}= {}'.format(*dice, modify_text, total)
     move = selected.get('descriptions', {}).get(match)
-    outcomes = [
-        ('7+', lambda x: x >= 7),
-        ('10+', lambda x: x >= 10),
-        ('7-9', lambda x: 7 <= x <= 9),
-        ('6-', lambda x: x <= 6),
-    ]
-    results = ''
-    for outcome in outcomes:
-        if outcome[0] in move and outcome[1](total):
-            results = '{}**{}:** {}\n'.format(
-                results, outcome[0], move.get(outcome[0])
-            )
-        elif outcome[0] == '6-' and outcome[1](total):
-            results = '{}**Miss...**\n'.format(results)
-    if not outcomes[3][1](total) and move.get('list'):
-        results = '{}\n{}'.format(results, move.get('list'))
-
-    return '{} {}\n{}\n\n{}'.format(
-        message.author.mention, roll_text, move.get('header'), results
+    return '{}\n{}'.format(
+        roll_text, format_rollable(move, roll=total)
     )
 
 
@@ -186,8 +219,6 @@ if __name__ == '__main__':
         tags = json.load(f)
     with open('moves.json') as f:
         moves = json.load(f)
-    with open('rollable.json') as f:
-        rollable = json.load(f)
     with open('cyber.json') as f:
         cyberwear = json.load(f)
 
