@@ -4,13 +4,23 @@ A Discord bot to help with playing [The Sprawl](https://www.drivethrurpg.com/pro
 
 ## Usage
 
-You can currently use the bot to search for tags and moves.
+You can use the bot to search for tags, moves, and cyberwear.
 
 Searching uses [fuzzy string matching](https://github.com/seatgeek/fuzzywuzzy), so don't worry about being too exact.
 
 `!tag high cap`
 
-`!move act`
+`!move mix`
+
+`!cyber legs`
+
+### Rolls
+
+The bot can also roll moves.
+
+`!roll pressure +1`
+
+Only the results relevant to the roll will be displayed (ie. if the roll is an 11, 7+ and 10+ are shown, but not 7-9).
 
 
 ## Setup
