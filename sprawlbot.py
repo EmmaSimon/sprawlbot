@@ -121,15 +121,15 @@ def format_rollable(move=None, roll=None):
             include.append(outcome)
         result = move.get('if_success', '')
 
-    return '{}\n\n{}\n{}{}'.format(
+    return re.sub('\n{3,}', '\n\n', '{}\n\n{}\n\n{}\n\n{}'.format(
         move.get('before', None),
-        ''.join([
-            '**{}**: {}\n'.format(
+        '\n'.join([
+            '**{}**: {}'.format(
                 outcome, move.get('outcomes', {}).get(outcome)
             ) for outcome in include
         ]),
         result, move.get('after', '')
-    )
+    ))
 
 
 def roll(match=None, selected=None, term=''):
