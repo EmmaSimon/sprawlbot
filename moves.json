@@ -69,6 +69,15 @@
   },
   "cat burglar": "**Cat Burglar**\n*Infiltrator*\n\nYou specialise in infiltrating unconventional access points and manoeuvring through locations by unconventional routes. During your infiltration, you will have opportunity to steal incidental portable items that might be useful later. After you have spent all your Covert Entry hold infiltrating a secure area through stealth and dexterity, gain [gear].",
   "chromed": "**Chromed**\n*Driver, Fixer, Hacker, Hunter, Infiltrator, Pusher, Reporter, Soldier, Tech*\n\nChoose another piece of cyberware at character creation or in downtime. Describe how you got it and paid for it the same as you did for your first piece of cyberware.",
+  "compromise security": {
+    "before": "**Compromise Security** *(mind)*\n*Matrix*\n\nWhen you attempt to compromise a sub-system's security, roll Mind.",
+    "if_success": "You may spend 1 hold to activate a security measure on that sub-system.",
+    "outcomes": {
+      "10+": "gain 3 hold over the sub-system you have compromised",
+      "6-": "you trigger an alert, which may have additional consequences",
+      "7-9": "gain 1 hold"
+    }
+  },
   "console cowboy": {
     "before": "**Console Cowboy** *(mind)*\n*Hacker*\n\nWhen you connect to a secure system, roll Mind.",
     "if_success": "While in that system, you may spend 1 hold for any of the following effects:\n  * Prevent a construct from triggering an alert\n  * Avoid an ICE routine executed against you, your deck, or your programs\n  * Increase your hold over **compromised security** or **manipulated systems** by 1",
@@ -89,6 +98,7 @@
   },
   "custom weapon": "**Custom weapon**\n*Killer*\n\nChoose a base and two options. You may customise an implanted weapon; use the stats of the weapon as the base and add two appropriate options.\n\n__Base *(choose 1, any firearm can be* +linked*)*:__\n\n  handgun(s) (2 damage close/near loud quick)\n  shotgun (3 damage close/near loud messy)\n  rifle (3 damage near/far/extreme loud)\n  blade (2 damage hand)\n  chain or wire (1 damage close area)\n\n__Options *(choose 2)*:__\n\n  ornate (+*valuable*)\n  antique (+*valuable* +*reload*)\n  automatic (+*autofire*)\n  silenced (-*loud*)\n  hi-powered or weighted (+*1 damage*)\n  big or dangerous (+*1 damage*)\n  versatile (may inflict s-harm)\n  ridiculous payload (+*breach*, +*dangerous*)\n  subtle (+*discreet*, +*reload*)\n  +*numerous* (small weapons only)\n\nWhen you've finished creating your weapon, name it.",
   "customiser": "**Customiser**\n*Tech*\n\nYou can identify and examine new or complicated technology related to your area of expertise, and modify technology with which you are familiar. When you try to modify a piece of tech, tell the MC what you want to do and discuss what tags or game effect that modification will have. The MC will tell you the requirements in terms of: time / tools / parts / help from contacts / more research",
+  "cyberdecks": "**Cyberdecks**\n*Matrix*\n\nUsing a cyberdeck gives you further options and defenses while hacking. Cyberdecks have four ratings – Hardening, Firewall, Processor, and Stealth – and can run programs.\n\nA basic cyberdeck divides 5 points among its ratings, with no rating lower than 0 or higher than 2. More advanced models may divide 6 or more points, with no rating higher than 3.\n\n * Hardening protects the circuitry of the cyberdeck from harm. Spend a point of Hardening to prevent an ICE attack from damaging your deck.\n\n  * Firewall protects the deck's software from harm. Spend a point of Firewall to prevent an ICE attack from damaging your programs.\n\n  * Processor determines how many programs the deck can run. Each point of Processor allows a deck to run one program.\n  * Stealth prevents a secure system's ICE from locating your login point. As long as your Stealth exceeds the system's Trace, ICE cannot Identify an Intruder or Sever a Connection.",
   "daredevil": "**Daredevil**\n*Driver*\n\nWhen you drive straight into danger without hedging your bets, you get +1 armour. If you take one or more harm, mark experience.",
   "deadbeat": "**Deadbeat**\n*Hunter*\n\nEveryone knows you only help your friends out when its convenient for you. When you hit the street, you never take the -1 penalty when you avoid your contacts' problems. You may still select the option that your contact has a problem, and if you do that choice may have fictional effects.",
   "deal of a lifetime": "**Deal of a lifetime**\n*Fixer*\n\nWhen you **hit the street** to sell something and roll a 7-9, choose one fewer result.",
@@ -238,6 +248,14 @@
   },
   "jack in": "**Jack in**\n*Hacker, Infiltrator*\n\nWhen you're jacked into the matrix, you have access to the matrix moves in Chapter 8: The Matrix.",
   "jack of all trades": "**Jack of All Trades**\n*Tech*\n\nChoose one more area of expertise.",
+  "jack out": {
+    "before": "**Jack Out** *(cool)*\n*Matrix*\n\nWhen you, your programs, or your deck are about to be damaged by ICE, you can try to jack out. Roll Cool.",
+    "outcomes": {
+      "10+": "you disconnect yourself from the system before any serious harm occurs",
+      "6-": "you take the established consequences... and you're still connected",
+      "7-9": "you jack out, but choose one:\n  * You lose some data\n  * You take some of the established consequences\n  * The owners of the target system trace you to your current location"
+    }
+  },
   "live and on the air": {
     "before": "**Live and On the Air** *(edge)*\n**Reporter**\n\nWhen you go live from the scene and broadcast a stream to avoid harm and expose your target, roll Edge.",
     "outcomes": {
@@ -246,7 +264,30 @@
     }
   },
   "loaded for bear": "**Loaded for Bear**\n*Killer*\n\nchoose another custom weapon.",
+  "login": {
+    "before": "**Login** *(synth)*\n*Matrix*\n\nWhen you attempt to gain access to a system, roll Synth.",
+    "outcomes": {
+      "10+": "you're in clean",
+      "6-": "you're in, but the MC chooses two",
+      "7-9": "you're in, but choose one:\n  * Passive trace (+1 trace)\n  * ICE is activated\n  * An alert is triggered (advance the active Mission Clock)\n  * Your access is restricted – take -1 ongoing to matrix moves in this system while your access is restricted"
+    }
+  },
+  "manipulate systems": {
+    "before": "**Manipulate Systems** *(synth)*\n*Matrix*\n\nWhen you attempt to manipulate a digitally-controlled aspect of a facility, roll Synth.",
+    "if_success": "You may spend 1 hold to activate routines on that sub-system.",
+    "outcomes": {
+      "10+": "gain 3 hold over the sub-system you are manipulating",
+      "7-9": "gain 1 hold over the sub-system you are manipulating"
+    }
+  },
   "master of disguise": "**Master of Disguise**\n*Infiltrator*\n\nYou can sell a persona so well that you set security forces at ease. While you are in disguise and your cover has not been blown, when you roll a 12+ to **fast talk** you may lower the Action Clock by one segment.",
+  "melt ice": {
+    "before": "**Melt ICE** *(edge)*\n*Matrix*\n\nWhen you attempt to evade, destroy or disable an activated ICE construct, roll Edge.",
+    "outcomes": {
+      "7+": "you evade, destroy, or temporarily disable the system, your choice",
+      "7-9": "the system successfully executes a routine before you can disable it"
+    }
+  },
   "mil specs": "**Mil Specs**\n*Killer*\n\nWhen you **mix it up**, you count as a small gang.",
   "military background": "**Military Background**\n*Killer*\n\nYou still have contacts in the military. When you **hit the street** for military gear and roll a 7-9, choose one fewer result.",
   "mix it up": {
