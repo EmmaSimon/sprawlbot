@@ -1,4 +1,5 @@
 {
+  "24/7 live feeds": "**24/7 Live Feeds**\n*Reporter*\n\nWhen you scan the feeds to **research** a topic, you may always ask a follow up question. On a 10+, take an additional [intel].",
   "acquire agricultural property": {
     "before": "**Acquire Agricultural Property** *(meat)*\n\nWhen you hit 0000 on your Harm Clock, roll Meat",
     "outcomes": {
@@ -14,6 +15,7 @@
       "7-9": "you stumble, hesitate, or flinch: the MC will offer you a worse outcome, hard bargain, or ugly choice"
     }
   },
+  "analytic": "**Analytic**\n*Tech*\n\nWhen you **assess**, roll Mind instead of Edge.",
   "apply first aid": {
     "before": "**Apply First Aid** *(cool)*\n\nWhen you treat someone's wounds using appropriate medical equipment, roll Cool.",
     "outcomes": {
@@ -21,6 +23,7 @@
       "7-9": "reduce their harm by one segment. If their Harm Clock is still at more than 2100, they take -1 ongoing until they receive proper medical attention"
     }
   },
+  "assassin": "**Assassin**\n*Infiltrator*\n\nWhen you attack unexpectedly, ask one question from the assess list for free.",
   "assess": {
     "before": "**Assess** *(edge)*\n\nWhen you closely study a person, place or situation, or when you quickly size up an opponent or a charged situation, roll Edge.",
     "if_success": "In the ensuing action, you may spend 1 hold at any time to ask the MC a question from the list below if your examination could have revealed the answer. The MC may ask you questions to clarify your intent. Take +1 forward when acting on the answers.\n\n* What potential complication do I need to be wary of?\n* What do I notice despite an effort to conceal it?\n* How is ______ vulnerable to me?\n* How can I avoid trouble or hide here?\n* What is my best way in/way out/way past?\n* Where can I gain the most advantage?\n* Who or what is my biggest threat in this situation?\n* Who or what is in control here?",
@@ -29,8 +32,10 @@
       "7-9": "gain 1 hold"
     }
   },
-  "backup": "**Backup**\n*Fixer*\n\nYou have a group of “associates” who provide security. This is a small gang of 5-10 hired thugs (2-harm +small +employees 1-armour). Pick 2:\n  * Your associates are well armed: add 1 harm\n  * Your associates are well armoured: +1 armour and +obvious\n  * Your associates are ex-military: add +disciplined\n  * Your associates are more than muscle to you: replace +employees with +loyal\n  * Your associates have bikes or a couple of other vehicles: add +mobile\n  * You have a large group of associates (15-30): replace +small with +medium\n\nGain the following job, and +1 crew:\n  * Protection: Your associates have your back\n     Disaster: Your associates have pissed of f the wrong people.",
+  "aura of professionalism": "**Aura of Professionalism**\n*Solider*\n\nWhen you **get the job** and try to **get paid**, choose one extra option, even on a miss.",
+  "backup": "**Backup**\n*Fixer*\n\nYou have a group of \"associates\" who provide security. This is a small gang of 5-10 hired thugs (2-harm +small +employees 1-armour). Pick 2:\n  * Your associates are well armed: add 1 harm\n  * Your associates are well armoured: +1 armour and +obvious\n  * Your associates are ex-military: add +disciplined\n  * Your associates are more than muscle to you: replace +employees with +loyal\n  * Your associates have bikes or a couple of other vehicles: add +mobile\n  * You have a large group of associates (15-30): replace +small with +medium\n\nGain the following job, and +1 crew:\n  * Protection: Your associates have your back\n     Disaster: Your associates have pissed of f the wrong people.",
   "balls in the air": "**Balls in the air**\n*Fixer*\n\n+1 crew and choose a new job.",
+  "believers": "**Believers**\n*Pusher*\n\nYou are part of a gang, tribe, band, corporation or similar group. You can go to them for aid, for resources or to hide out until the heat dies down. As a group, they're pretty trustworthy, but they will make demands on you in return (your gang counts as a Contact). By default this group has a core of about 20 people as well as various associates and groupies\n\nWhat kind of gang is it? *Choose one*: Street, Corporate, Entertainment/Media, Military, Political\n\nHow big is your gang? *Choose a size and choose two tags*:\n  * Small: 10 or fewer (loyal, mobile, well-armed, specialists)\n  * Medium: 20-40 (mobile, well-armed, specialists)\n  * Large: 50-100 (well-connected, resources, self-sufficient)\n  * Huge: 200+ (well-connected, resources, spread out, self-sufficient)\n\nDefine your gang's territory. Do they control a few blocks of the streets? Do they operate out of a compound or an arcology?\n\n*Choose one*: poor, wanted, hard to find, unreliable, violent, hated\n\nWho leads your gang? If your gang is small, you may be the leader. Otherwise, *choose one*: immoral, demanding, grasping, a real fucker, useless, absent\n\nWhat are your gang's main gigs? *Choose two*: commerce, crime, parties, muscle, deliveries, entertainment, infiltration, scavenging, activism, politics",
   "big game hunter": {
     "before": "**Big Game Hunter** *(edge)*\n*Hunter*\n\nWhen you spring a trap for a target you have investigated, roll Edge.",
     "outcomes": {
@@ -39,6 +44,30 @@
     }
   },
   "black ice vet": "**Black ICE Vet**\n*Hacker*\n\nWhen Black ICE executes a routine against you, the MC only chooses two options.",
+  "blend in": {
+    "before": "**Blend In** *(cool)*\n*Tech*\n\nWhen you're about to be caught somewhere you shouldn't be, but look and act like you belong there, roll Cool.",
+    "outcomes": {
+      "10+": "no one thinks twice about your presence until you do something to attract attention",
+      "7-9": "you'll be fine as long as you leave right now, but if you do anything else, your presence will arouse suspicion"
+    }
+  },
+  "bring it on home": "**Bring it on Home**\n*Pusher*\n\nWhenever you ask someone a question with **one million points of light**, you may ask a follow up question from the list. When you succeed at **vision thing**, gain 1 extra hold.",
+  "bypass": {
+    "before": "**Bypass** *(cool)*\n*Tech*\n\nWhen you attempt to subvert security measures (bypassing a locked door, disabling an alarm, camera or motion detector, etc), roll Cool.",
+    "outcomes": {
+      "10+": "you gain some valuable insight into the facility's security, gain [intel]",
+      "7+": "you successfully bypass the system without leaving a trace"
+    }
+  },
+  "case the joint": {
+    "before": "**Case the Joint** *(edge)*\n*Infiltrator*\n\nWhen you take time to examine a location for security weaknesses you can exploit, roll Edge.",
+    "if_success": "You may spend this [intel] in the normal way, or you can spend one point of this [intel] to ask questions from the **assess** or **research** lists.",
+    "outcomes": {
+      "10+": "gain three [intel].",
+      "7-9": "gain [intel]"
+    }
+  },
+  "cat burglar": "**Cat Burglar**\n*Infiltrator*\n\nYou specialise in infiltrating unconventional access points and manoeuvring through locations by unconventional routes. During your infiltration, you will have opportunity to steal incidental portable items that might be useful later. After you have spent all your Covert Entry hold infiltrating a secure area through stealth and dexterity, gain [gear].",
   "chromed": "**Chromed**\n*Driver, Fixer, Hacker, Hunter, Infiltrator, Pusher, Reporter, Soldier, Tech*\n\nChoose another piece of cyberware at character creation or in downtime. Describe how you got it and paid for it the same as you did for your first piece of cyberware.",
   "console cowboy": {
     "before": "**Console Cowboy** *(mind)*\n*Hacker*\n\nWhen you connect to a secure system, roll Mind.",
@@ -48,21 +77,65 @@
       "7-9": "gain 1 hold"
     }
   },
+  "corporate knowledge": "**Corporate Knowledge**\n*Solider*\n\nYou used to be a Company Man. When you **research** a corporation, you may always ask a follow up question. On a 10+, take an additional [intel].",
+  "corporate secrets": "**Corporate Secrets**\n*Killer*\n\nYou used to be a Company Man. When you **research** a corporation, you may always ask a follow up question. On a 10+, take an additional [intel].",
+  "covert entry": {
+    "before": "**Covert Entry** *(cool)*\n*Infiltrator*\n\nWhen you attempt to infiltrate a secure area alone, roll Cool.",
+    "if_success": "As the MC describes the infiltration and the security measures you must overcome, you may spend 1 hold to describe how you overcome the obstacle and:\n  * Bypass a security system or guard.\n  * Disable a security system you have bypassed.\n  * Disable a guard.\n  * Escape notice.",
+    "outcomes": {
+      "10+": "gain 3 hold.",
+      "7-9": "gain 1 hold."
+    }
+  },
+  "custom weapon": "**Custom weapon**\n*Killer*\n\nChoose a base and two options. You may customise an implanted weapon; use the stats of the weapon as the base and add two appropriate options.\n\n__Base *(choose 1, any firearm can be* +linked*)*:__\n\n  handgun(s) (2 damage close/near loud quick)\n  shotgun (3 damage close/near loud messy)\n  rifle (3 damage near/far/extreme loud)\n  blade (2 damage hand)\n  chain or wire (1 damage close area)\n\n__Options *(choose 2)*:__\n\n  ornate (+*valuable*)\n  antique (+*valuable* +*reload*)\n  automatic (+*autofire*)\n  silenced (-*loud*)\n  hi-powered or weighted (+*1 damage*)\n  big or dangerous (+*1 damage*)\n  versatile (may inflict s-harm)\n  ridiculous payload (+*breach*, +*dangerous*)\n  subtle (+*discreet*, +*reload*)\n  +*numerous* (small weapons only)\n\nWhen you've finished creating your weapon, name it.",
+  "customiser": "**Customiser**\n*Tech*\n\nYou can identify and examine new or complicated technology related to your area of expertise, and modify technology with which you are familiar. When you try to modify a piece of tech, tell the MC what you want to do and discuss what tags or game effect that modification will have. The MC will tell you the requirements in terms of: time / tools / parts / help from contacts / more research",
   "daredevil": "**Daredevil**\n*Driver*\n\nWhen you drive straight into danger without hedging your bets, you get +1 armour. If you take one or more harm, mark experience.",
-  "deadbeat": "**Deadbeat**\n*Hunter*\n\nEveryone knows you only help your friends out when its convenient for you. When you hit the street, you never take the -1 penalty when you avoid your contacts’ problems. You may still select the option that your contact has a problem, and if you do that choice may have fictional effects.",
+  "deadbeat": "**Deadbeat**\n*Hunter*\n\nEveryone knows you only help your friends out when its convenient for you. When you hit the street, you never take the -1 penalty when you avoid your contacts' problems. You may still select the option that your contact has a problem, and if you do that choice may have fictional effects.",
   "deal of a lifetime": "**Deal of a lifetime**\n*Fixer*\n\nWhen you **hit the street** to sell something and roll a 7-9, choose one fewer result.",
   "declare a contact": "**Declare A Contact**\n\nWhen you need to call in a favour from a new contact, name and describe the Contact, then say why the Contact owes you a favour or why you owe them a favour. The MC will ask you some questions about the Contact and your relationship. Add the Contact to your list.\n\nYou can only **declare a contact** once per mission, although certain Playbook Moves may allow you to gain more contacts in similar ways.",
+  "diverse interests": "**Diverse Interests**\n*Tech*\n\nChoose one more area of expertise.",
+  "driven": {
+    "before": "**Driven** *(edge)*\n*Pusher*\n\nWhen you begin a mission that furthers your vision, roll Edge.",
+    "if_success": "You may spend 1 hold before rolling any other move to take +1 or -2 forward to the move.",
+    "outcomes": {
+      "10+": "gain 3 hold.",
+      "7-9": "gain 1 hold."
+    }
+  },
   "drone jockey": "**Drone Jockey**\n*Driver*\n\nYou start with two drones.",
   "ear to the ground": "**Ear to the Ground**\n*Hunter*\n\nYou have a knack for loosening lips and picking up information. When you circulate among a neighbourhood or a group of people, you may **research** to gather information.",
+  "emotionless": "**Emotionless**\n*Killer*\n\nWhen you **play hardball**, roll Synth.",
   "enhance": "**Enhance**\n*Hunter*\n\nWhen you examine your gathered evidence, gain [intel] and roll research with Edge instead of Mind.",
+  "exit strategy": {
+    "before": "**Exit Strategy** *(mind)*\n*Solider*\n\nYou always have an escape plan prepared. When shit hits the fan and you decide to bail out, roll Mind.",
+    "if_success": "  * Your team\n  * A mission objective\n  * Identifiable evidence\n  * Your staked Cred",
+    "outcomes": {
+      "10+": "choose one thing to leave behind.",
+      "7+": "You escape the situation.",
+      "7-9": "choose two things to leave behind."
+    }
+  },
+  "expert": "**Expert**\n*Tech*\n\n*Choose one area of expertise from the following list:*\n\n  * *Mechanic:* you are an **expert** in the construction, maintenance and operation of vehicles & drones; you have two drones created according to the Driver move **drone jockey**\n\n  * *Splicer:* you are an **expert** in cybernetics and biomodification; you may begin with one extra piece of cyberware; describe how you implanted this in yourself, but you need not describe how you paid for it\n\n  * *Breadboarder:* you are an **expert** in computers and electronics; you have a cyberdeck with 5 points of ratings (no rating may be higher than 2) and a number of programs equal to its Processor rating+1\n\n  * *Gunsmith:* you are an **expert** in armaments; you begin with the Killer move **custom weapon**\n\n  * *Medic:* you are an **expert** in medicine and pharmaceuticals; when you **apply first aid**, you heal one additional harm segment, even on a miss\n\n  * *Pyrotechnician:* you are an **expert** in chemistry and explosives; ignore the +*dangerous* tag for explosives\n\nYou start with workshops appropriate to your areas of expertise (e.g. surgery, electronics workshop, garage).",
   "eye for detail": "**Eye for detail**\n*Hunter*\n\nYou are a master at tailing people and staking out locations. When you perform surveillance on a person or a place, gain [intel] and roll assess.",
   "eye in the sky": "**Eye in the sky**\n*Driver*\n\nWhen **helping** or **interfering** while piloting a drone, roll Edge instead of Links.",
+  "face": "**Face**\n*Infiltrator*\n\nYou specialise in infiltrating by appearing to belong in places you do not, hiding in plain sight. During your infiltration, you will have opportunity to see or overhear information which might be relevant later. After you have spent all your Covert Entry hold infiltrating a secure area through charm and social graces, gain [intel].",
   "facetime": "**Facetime**\n*Fixer*\n\nWhen you engage someone in face to face conversation without intervening technology, take +1 forward to **fast talk** them.",
+  "famous": "**Famous**\n*Pusher*\n\nYour face is well known beyond the narrow scope of your people. Unless you disguise yourself, you will be recognised by many people you meet. If someone recognises you, you take +1 forward against them, but people will find out that you met them. Both you and the MC can declare that someone recognises you.",
   "fast talk": {
     "before": "**Fast Talk** *(style)*\n\nWhen you try to convince someone to do what you want with promises, lies or bluster, roll Style.",
     "outcomes": {
       "10+": "NPCs do what you want. PCs choose whether to do it or not. If they do, they mark experience. If they don't, they must **act under pressure** to go against your stated wishes.",
       "7-9": "NPCs do it, but someone will find out: the MC will advance the appropriate Countdown Clock. For PCs choose one:\n  * If they do what you want, they mark experience\n  * If they don't do it, they must act under pressure to go against your stated wishes\nThen it's up to them."
+    }
+  },
+  "filthy assistants": "**Filthy Assistants**\n*Reporter*\n\nWhen you spend [intel] and give mission advice based on your **research**, your team takes +1 forward to follow that advice and you mark experience.",
+  "gather evidence": {
+    "after": "If the Story Clock reaches 0000 before the Noise Clock, the Reporter has broken the story before the implicated parties could cover up the evidence, or stop the investigation. The exact implications of this for the game will vary based on the story, but it should have a major impact on the implicated parties and will affect at least one Corporate Clock.\n\nIf the Noise Clock reaches 0000 before the Story Clock, the implicated parties have tied up all the loose ends and the story is dead. Now that damage control is complete, they can deal with the Reporter permanently. Advance any relevant Corporate or Threat Clocks.",
+    "before": "**Gather Evidence** *(mind)*\n*Reporter*\n\nWhen you gather evidence to break a story, roll Mind.",
+    "outcomes": {
+      "10+": "you get the evidence you need, advance that Story Clock.",
+      "6-": "the MC will advance the Noise Clock and make a move",
+      "7-9": "you get the evidence, but tip your hand to someone implicated in your story; tell the MC which clock to advance: a relevant Corporate Clock, the linked Noise Clock or the relevant Mission Clock (Legwork or Action, depending on which phase of the current mission you're in)"
     }
   },
   "get the job": {
@@ -90,6 +163,8 @@
       "7-9": "the cyberware doesn't work as well as advertised, choose one: +unreliable, +substandard, +hardware decay, +damaging."
     }
   },
+  "hands-on management": "**Hands-on Management**\n*Solider*\n\nWhen you **mix it up** while directing a mission from the front, roll Mind instead of Meat.",
+  "hard": "**Hard**\n*Killer*\n\nWhen you make the **harm** move, subtract your Meat from your roll.",
   "hard to find": "**Hard to find**\n*Fixer*\n\nYou keep a low profile and actively avoid the people you owe. When you **hit the street** and roll a 7-9, choose one fewer result.",
   "harm": {
     "before": "**Harm**\n\nWhen you suffer harm (even 0-harm or s-harm) lower the harm suffered by the level of your armour (if any), fill in a number of segments on your Harm Clock equal to the remaining harm, and roll harm suffered.",
@@ -105,6 +180,7 @@
       "7-9": "you are implicated in the results of the other character's move and may expose yourself to danger, retribution, or cost"
     }
   },
+  "here's the plan": "**Here's the plan**\n*Soldier*\n\nWhen you plan a Mission, everyone to whom you assign a task takes +1 ongoing while they act on that task according to the plan. Anyone who rolls a miss or goes off the plan loses their bonus for that mission. If *you* get paid, mark experience.",
   "hit the street": {
     "before": "**Hit The Street** *(style)*\n\nWhen you go to a Contact for help, roll Style.",
     "outcomes": {
@@ -140,17 +216,39 @@
       "7-9": "you've never met them before, they're an unknown quantity"
     }
   },
+  "i love it when a plan comes together": {
+    "after": "During the mission, spend 1 hold for one of the following effects:\n  * You have that piece of gear that you need, *right now*\n  * You appear in a scene where you are needed, *right now*",
+    "before": "**I Love It When a Plan Comes Together** *(edge)*\n*Solider*\n\nAt the start of a mission, roll Edge.",
+    "outcomes": {
+      "10+": "gain 3 hold",
+      "6-": "gain 1 hold anyway, but your opponent has predicted your every move; the MC will advance the Legwork Clock",
+      "7-9": "gain 1 hold"
+    }
+  },
   "ice breaker": "**ICE Breaker**\n*Hacker*\n\nYou know how to disable ICE quickly and quietly. Once per Matrix run you may cancel a routine executed against you, your deck, or your programs.",
   "iceman": "**Iceman**\n*Driver*\n\nWhen you try to **fast talk** someone, roll Cool.",
+  "inner circle": "**Inner Circle**\n*Pusher*\n\nYou have a group of loyal confidantes within your larger circle of believers. This is a small gang of 5-10 believers (2-harm small loyal 1-armour). Pick 2:\n  * Your confidantes are well armed: add +1 harm\n  * Your confidantes are well armoured: +1 armour and +*obvious*\n  * Your confidantes are ex-military: add +*disciplined*\n  * Your confidantes have bikes or a couple of other vehicles: add +*mobile*",
   "it all fits together!": {
-    "before": "**It all fits together!** *(edge)*\n*Hunter*\n\nYou’re a master of making connections between seemingly unrelated events. At the start of a mission, roll Edge.",
+    "before": "**It all fits together!** *(edge)*\n*Hunter*\n\nYou're a master of making connections between seemingly unrelated events. At the start of a mission, roll Edge.",
     "if_success": "As you put everything together during the mission, spend 1 hold at any time to ask a question from the **research** list.",
     "outcomes": {
       "10+": "gain 3 hold.",
       "7-9": "gain 1 hold."
     }
   },
-  "jack in": "**Jack in**\n*Hacker*\n\nWhen you’re jacked into the matrix, you have access to the matrix moves in Chapter 8: The Matrix.",
+  "jack in": "**Jack in**\n*Hacker, Infiltrator*\n\nWhen you're jacked into the matrix, you have access to the matrix moves in Chapter 8: The Matrix.",
+  "jack of all trades": "**Jack of All Trades**\n*Tech*\n\nChoose one more area of expertise.",
+  "live and on the air": {
+    "before": "**Live and On the Air** *(edge)*\n**Reporter**\n\nWhen you go live from the scene and broadcast a stream to avoid harm and expose your target, roll Edge.",
+    "outcomes": {
+      "10+": "you get the shot you want and are \"escorted\" to a position of safety",
+      "7-9": "choose one:\n  * Your story irritates your target. (The MC will advance a relevant threat clock)\n  * Someone on your team gets hurt off camera\n  * Your story angers your employer\n  * Your rushed narrative is misinterpreted by the public with unintended consequences"
+    }
+  },
+  "loaded for bear": "**Loaded for Bear**\n*Killer*\n\nchoose another custom weapon.",
+  "master of disguise": "**Master of Disguise**\n*Infiltrator*\n\nYou can sell a persona so well that you set security forces at ease. While you are in disguise and your cover has not been blown, when you roll a 12+ to **fast talk** you may lower the Action Clock by one segment.",
+  "mil specs": "**Mil Specs**\n*Killer*\n\nWhen you **mix it up**, you count as a small gang.",
+  "military background": "**Military Background**\n*Killer*\n\nYou still have contacts in the military. When you **hit the street** for military gear and roll a 7-9, choose one fewer result.",
   "mix it up": {
     "before": "**Mix It Up** *(meat)*\n\nWhen you use violence against an armed force to seize control of an objective, state that objective and roll Meat.",
     "outcomes": {
@@ -158,8 +256,38 @@
       "7-9": "choose 2:\n  * you make too much noise. Advance the relevant Mission Clock\n  * you take harm as established by the fiction\n  * an ally takes harm as established by the fiction\n  * something of value breaks"
     }
   },
+  "monstering": {
+    "before": "**Monstering** *(edge)*\n*Reporter*\n\nWhen you corner someone and hound them with questions to get to the bottom of a story, roll Edge.",
+    "outcomes": {
+      "10+": "they tell you the truth, regardless of the consequences.",
+      "7-9": "they give you enough to get you off their back, then when they're safe, they choose one:\n  * they respond with fear\n  * they respond with clinical calm\n  * they respond with anger"
+    }
+  },
+  "more machine than meat": "**More machine than meat**\n*Killer*\n\nChoose another piece of cyberware at character creation or in downtime. Describe how you got it and paid for it the same as you did your first piece of cyberware.",
+  "mother duck": "**Mother Duck**\n*Infiltrator*\n\nWhen you infiltrate a location you can get your team in as well. When you spend hold to *Bypass a security system or guard* or *Escape notice*, your team may accompany you.",
   "neural scars": "**Neural Scars**\n*Hacker*\n\nYou have 1-armour against Black ICE.",
+  "nose for a story": {
+    "before": "**Nose for a Story** *(edge)*\n*Reporter*\n\nAt the start of a mission, roll Edge.",
+    "if_success": "During the mission, spend 1 hold to invoke one of the following effects:\n  * Ask one question from the **research** list\n  * Take +1 forward when **monstering**\n  * Find a piece of evidence that links this mission to a current story; start a Story Clock and a linked Noise Clock or roll to **gather evidence**",
+    "outcomes": {
+      "10+": "gain 3 hold.",
+      "7-9": "gain 1 hold."
+    }
+  },
+  "obsessive": "**Obsessive**\n*Tech*\n\nWhen you shut yourself away with a problem or piece of cutting edge tech, make a **research** move. You may use one question to ask any question about the object of your contemplation and study.",
+  "on it": "**On it**\n*Tech*\n\nWhen your areas of expertise are central to **helping** or **interfering** with a teammate, roll Cool instead of Links.",
   "on the trail": "**On the Trail**\n*Hunter*\n\nWhen you want to find someone or something, name your target. When you gain [intel], you may note that it concerns your target. When you spend three such [intel], the MC will describe where your target is; you say how the clues led you to that knowledge and how you have your target or its defenses at a disadvantage.",
+  "one million points of light": "**One Million Points of Light**\n*Pusher*\n\nWhen you successfully advocate for your vision with **vision thing**, ask one of the following questions. You may spend 1 hold to ask one of the following questions:\n  * What do you wish I'd do?\n  * Are you telling the truth?\n  * How are you connected to the current events?\n  * How are you vulnerable?\n  * What do you intend to do?\n  * What do you most desire?",
+  "opportunistic": "**Opportunistic**\n*Pusher*\n\nWhen you **help** or **interfere** with someone, roll Edge.",
+  "people person": "**People Person**\n*Pusher*\n\nWhen you **hit the street** among people who share your vision and roll a 7-9, choose one fewer result.",
+  "plan b": {
+    "before": "**Plan B** *(cool)*\n*Infiltrator*\n\nWhen shit hits the fan and you have to get out, name your escape route and roll Cool.",
+    "outcomes": {
+      "10+": "sweet, you're gone.",
+      "6-": "you're caught in a vulnerable position, half in and half out. The MC will make a move",
+      "7–9": "you can go or stay, but if you go it costs you: leave something behind, or take something with you; in either case, the MC will tell you what"
+    }
+  },
   "play hardball": {
     "before": "**Play Hardball** *(edge)*\n\nWhen you get in someone's face threatening violence and you intend to carry through, roll Edge.",
     "outcomes": {
@@ -167,15 +295,34 @@
       "7-9": "For NPCs, the MC chooses 1:\n  * they attempt to remove you as a threat, but not before suffering the established consequences\n  * they do it, but they want payback. Add them as a Threat\n  * they do it, but tell someone all about it. Advance the appropriate Mission Clock\nPCs choose: do what you want, or suffer the established consequences. They gain +1 forward to act against you."
     }
   },
+  "press pass": "**Press Pass**\n*Reporter*\n\nIf you reveal your public persona to **fast talk** your way in, do not roll the dice, you count as rolling a 10+. Take [intel] and advance the Legwork Clock.",
   "produce equipment": "**Produce Equipment**\n\nWhen you produce the equipment you need at the right time, describe how and why your professionalism and forethought told you to bring this equipment on the mission and spend [gear]. You must spend [gear] to **produce equipment**.",
   "programming on the fly": "**Programming on the Fly**\n*Hacker*\n\nYou can adapt your programs to the specific weaknesses of matrix constructs as you encounter them. When you successfully **compromise security** or **manipulate systems**, hold +1.",
+  "psychological warfare": {
+    "before": "**Psychological Warfare** *(edge)*\n*Infiltrator*\n\nWhen you attempt to influence the morale of your enemies by leaving evidence of violence while remaining undetected, roll Edge.",
+    "outcomes": {
+      "10+": "you choose",
+      "7+": "your enemies are impressed and overly cautious, scared and demoralised, or angry and careless (MC's choice)."
+    }
+  },
+  "rabble rouser": "**Rabble Rouser**\n*Pusher*\n\nYou may use **vision thing** to sway a potentially sympathetic crowd.",
+  "recruiter": {
+    "before": "Recruiter** *(edge)*\n*Solider*\n\nWhen you attempt to recruit a specialist or a team of specialists to directly assist with your mission, roll Edge.",
+    "if_success": "  * Reliable professional(s)\n  * A small team (up to 5)\n  * As competent as required",
+    "outcomes": {
+      "10+": "choose 2.",
+      "7-9": "choose 1."
+    }
+  },
+  "reliable sources": "**Reliable Sources**\n*Reporter*\n\nWhen you call your regular sources to **research** a topic, roll Style instead of Mind.",
+  "renaissance man": "**Renaissance Man**\n*Tech*\n\nChoose one more area of expertise.",
   "rep hacker": "**Rep**\n*Hacker*\n\nWhen you appear in the Matrix with a recognisable avatar, roll Synth instead of Style for **fast talk** and instead of Edge for **play hardball**. When your reputation gets you into trouble, mark experience.",
   "reputation": {
-    "after": "Either you or the MC can say whether someone is “of consequence”, but once you’ve made the reputation move on someone, they’re “of consequence” and will be a recurring part of the story.",
+    "after": "Either you or the MC can say whether someone is \"of consequence\", but once you've made the reputation move on someone, they're \"of consequence\" and will be a recurring part of the story.",
     "before": "**Reputation** *(edge)*\n*Fixer*\n\nWhen you meet someone of consequence who might have heard of you, roll Edge.",
     "outcomes": {
       "10+": "take +1 forward with them.",
-      "6-": "the MC will decide what they’ve heard about you, if anything.",
+      "6-": "the MC will decide what they've heard about you, if anything.",
       "7+": "say what they know about you."
     }
   },
@@ -190,10 +337,28 @@
   },
   "reveal knowledge": "**Reveal Knowledge**\n\nWhen you reveal your knowledge of the opposition's preparations, dispositions or environment, describe how you discovered that information and spend [intel]. You must spend [intel] to **reveal knowledge**. Take +1 forward to exploit the opportunity offered by that information.",
   "right tool for the job": "**Right tool for the job**\n*Driver*\n\nYou have two additional cyber-linked vehicles (build each in the same way as your custom vehicle).",
-  "sales engineer": "**Sales Engineer**\n*Fixer*\n\nYou’ve demonstrated the use of just about every piece of gear available on the street. When you **produce equipment**, take +1 forward with that piece of gear if you use it immediately.",
+  "sales engineer": "**Sales Engineer**\n*Fixer*\n\nYou've demonstrated the use of just about every piece of gear available on the street. When you **produce equipment**, take +1 forward with that piece of gear if you use it immediately.",
   "search optimisation": "**Search Optimisation**\n*Hacker*\n\nWhen you **research** a topic in the Matrix, you may always ask a follow up question. On a 10+, take an additional [intel].",
   "second skin": "**Second Skin**\n*Driver*\n\nWhen jacked in through your Neural Interface to a cyber-linked vehicle:\n  * when you act under pressure, roll Cool + your car's power\n  * if you mix it up, roll Synth (instead of Meat) + your car's power\n  * if you play hardball, roll Edge + your car's looks\n  * if you help or interfere with someone, roll Links + your car's power\n  * if someone interferes with you, add your car's weakness to their roll (in addition to their links)",
   "see the angles": "**See the Angles**\n*Hunter*\n\nAt the start of the Action Phase, hold [intel] and [gear].",
+  "serious badass": {
+    "before": "**Serious Badass** *(style)*\n*Killer*\n\nWhen you enter a charged situation, roll Style.",
+    "if_success": "Spend 1 hold to make eye contact with an NPC present, who freezes or flinches and can't act until you break it off.",
+    "outcomes": {
+      "10+": "gain 2 hold.",
+      "6-": "your enemies identify you immediately as their foremost threat",
+      "7–9": "gain 1 hold."
+    }
+  },
+  "silver tongue": "**Silver Tongue**\n*Pusher*\n\nWhen you **fast talk** someone and roll **7+**, you get a little something extra. Take [intel].",
+  "slippery": {
+    "before": "**Slippery** *(edge)*\n*Solider*\n\nAt the end of a mission during which you planted or hid evidence to shift blame away from you and your team, name who you threw under the corporate bus and roll Edge.",
+    "outcomes": {
+      "10+": "the MC will reduce a corporate clock by one",
+      "6-": "create or increase the Threat Clock of whoever you threw under the bus",
+      "7+": "the MC will not increase corporate clocks in the retaliation phase"
+    }
+  },
   "smooth": "**Smooth**\n*Fixer*\n\nwhen you **help** or **interfere** with someone, roll Style instead of Links.",
   "sniper": {
     "before": "**Sniper** *(cool)*\n*Hunter*\n\nWhen you set up a covered and concealed place to hide, roll Cool.",
@@ -203,9 +368,36 @@
       "7-9": "choose 2"
     }
   },
+  "steady presence": "**Steady Presence**\n*Solider*\n\nWhen you give someone a pep talk while in a stressful situation, you **help** them as if you had rolled 10+.",
+  "stealth operative": "**Stealth Operative**\n*Infiltrator*\n\nYou have an intuitive sense of how to blend in with the rhythms of a secure area and can take actions that make its security forces feel at ease. When you **assess** while undetected and roll a 12+, you may spend one hold to lower the Action Clock by one segment.",
+  "storage": {
+    "before": "**Storage** *(mind)*\n*Tech*\n\nAfter receiving a job you may look through your accumulated parts and supplies for equipment that might help with the current mission. Roll Mind.",
+    "outcomes": {
+      "10+": "gain 3 [gear] relevant to your chosen area(s) of expertise.",
+      "7-9": "gain 1 [gear] relevant to your chosen area(s) of expertise."
+    }
+  },
   "street kingpin": "**Street kingpin**\n*Fixer*\n\n+1 crew and choose a new job.",
   "sweet ride": "**Sweet Ride**\n*Driver*\n\nWhen you **hit the street** in your vehicle, roll Style + your vehicle's Looks.",
+  "tactical operations": "**Tactical Operations**\n*Solider*\n\nWhen you **assess** while leading a mission from the front, hold +1, even if you miss.",
   "tech support": "**Tech Support**\n*Hacker*\n\nWhen you **help** a team member while jacked into the matrix, roll Mind instead of Links.",
+  "trained eye": {
+    "before": "**Trained Eye** *(cool)*\n*Killer*\n\nWhen you evaluate a person, vehicle, drone or gang, roll Cool.",
+    "outcomes": {
+      "10+": "gain +1 ongoing when acting against that target",
+      "7+": "ask the target \"How are you vulnerable to me?\" Take +1 forward when acting on the answer."
+    }
+  },
+  "vision thing": {
+    "after": "When you use this move on a PC, spend your hold to help or interfere as if you had rolled a 10+ (i.e. give them +1 or -2). If you miss against a PC, they gain 2 hold against you which they can use in the same way.",
+    "before": "**Vision Thing** *(style)*\n*Pusher*\n\nWhen you have time and space for an emotional connection with someone and you passionately advocate for your vision, roll Style.",
+    "if_success": "Spend 1 hold to have the targeted NPCs:\n  * give you something you want\n  * do something you ask\n  * fight to protect you or your cause\n  * disobey an order given by someone with authority or leverage over them",
+    "outcomes": {
+      "10+": "gain 2 hold.",
+      "7-9": "gain 1 hold"
+    }
+  },
+  "war correspondent": "**War Correspondent**\n*Reporter*\n\nWhen acting under pressure while in physical danger, roll Edge instead of Cool.",
   "wheels": "**Wheels**\n*Driver*\n\nYou start with a cyber-linked vehicle.",
   "word on the street": "**Word on the Street**\n*Fixer*\n\nWhen you **research** by listening to or recalling street level gossip, take an additional [intel], even on a miss.",
   "zeroed": "**Zeroed**\n*Hacker*\n\nYour identity is a mystery which you closely guard. Your deck has +2 Stealth."
