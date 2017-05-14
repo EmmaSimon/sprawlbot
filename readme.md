@@ -25,8 +25,16 @@ Only the results relevant to the roll will be displayed (ie. if the roll is an 1
 
 ## Setup
 
-Clone this repo to a directory on your server:
+The bot only works with python 3.5+. It's been tested on Debian and Windows 10, but it should work on most OSes.
 
+It requires [discord.py](https://github.com/Rapptz/discord.py) and [FuzzyWuzzy](https://github.com/seatgeek/fuzzywuzzy).
+
+To install:
+```
+pip3 install discord.py fuzzywuzzy[speedup]
+```
+
+Clone this repo to a directory on your server:
 ```
 git clone git@github.com:EmmaSimon/sprawlbot.git
 ```
