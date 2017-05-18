@@ -2,6 +2,7 @@
 import argparse
 import json
 import os
+from pathlib import Path
 import random
 import re
 import sys
@@ -38,18 +39,18 @@ async def on_message(message):
 
     options = {
         ('tag', 'tags'): {
-            'descriptions': tags,
+            'descriptions': data.get('tags', {}),
             'output': '+*{key}*: {value}',
         },
         ('move', 'moves'): {
-            'descriptions': moves,
+            'descriptions': data.get('moves', {}),
         },
         ('cyber', 'cyberwear'): {
-            'descriptions': cyberwear,
+            'descriptions': data.get('cyber', {}),
         },
         ('roll',): {
             'function': roll,
-            'descriptions': moves,
+            'descriptions': data.get('moves', {}),
             'output': '{mention} {function}'
         },
     }
@@ -215,12 +216,12 @@ def settings_dialog(default_prefix):
 if __name__ == '__main__':
     config = get_config()
 
-    with open('tags.json') as f:
-        tags = json.load(f)
-    with open('moves.json') as f:
-        moves = json.load(f)
-    with open('cyber.json') as f:
-        cyberwear = json.load(f)
+    data = {}
+    data_dir = Path('data')
+    data_files = ['tags', 'moves', 'cyber']
+    for file in data_files:
+        with open(str(data_dir / '{}.json'.format(file))) as f:
+            data[file] = json.load(f)
 
     try:
         print('Starting sprawlbot...')
