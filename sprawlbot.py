@@ -30,30 +30,10 @@ async def on_message(message):
     if not message_text.startswith(config.prefix):
         return
 
-    split = message_text.lstrip(config.prefix).lower().split(maxsplit=1)
-    if len(split) < 2:
-        return
-    command, term = split
-    command = command.strip().lower()
-    term = term.strip().lower()
+    command, *term = (
+        message_text.strip().lstrip(config.prefix).lower().split(maxsplit=1)
+    )
 
-    options = {
-        ('tag', 'tags'): {
-            'descriptions': data.get('tags', {}),
-            'output': '+*{key}*: {value}',
-        },
-        ('move', 'moves'): {
-            'descriptions': data.get('moves', {}),
-        },
-        ('cyber', 'cyberwear'): {
-            'descriptions': data.get('cyber', {}),
-        },
-        ('roll',): {
-            'function': roll,
-            'descriptions': data.get('moves', {}),
-            'output': '{mention} {function}'
-        },
-    }
     selected = None
     for command_set in options:
         if command in command_set:
@@ -61,6 +41,14 @@ async def on_message(message):
             break
     if not selected:
         return
+
+    if not term:
+        await client.send_message(
+            message.channel, selected.get('usage').format(prefix=config.prefix)
+        )
+        return
+
+    term = term[0]
 
     match = matcher(term, selected.get('descriptions', {}).keys())
     match_content = selected.get(
@@ -222,6 +210,58 @@ if __name__ == '__main__':
     for file in data_files:
         with open(str(data_dir / '{}.json'.format(file))) as f:
             data[file] = json.load(f)
+
+    options = {
+        ('tag', 'tags'): {
+            'descriptions': data.get('tags', {}),
+            'output': '+*{key}*: {value}',
+            'usage': (
+                '```{prefix}tag[s] {{tag name}}\n\n'
+                'Search the tag list for the specified tag.\n'
+                'This includes weapon and gear tags. The tag name you search '
+                'for does not need to be exact, fuzzy finding is used.\n'
+                'ex: {prefix}tag encrypt'
+                '```'
+            )
+        },
+        ('move', 'moves'): {
+            'descriptions': data.get('moves', {}),
+            'usage': (
+                '```{prefix}move[s] {{move name}}\n\n'
+                'Search the move list for the specified move.\n'
+                'This displays the full move text. The move name you search '
+                'for does not need to be exact, fuzzy finding is used.\n'
+                'ex: {prefix}move pressure'
+                '```'
+            )
+        },
+        ('cyber', 'cyberwear'): {
+            'descriptions': data.get('cyber', {}),
+            'usage': (
+                '```{prefix}cyber[wear] {{cyberwear name}}\n\n'
+                'Search the cyberwear list for the specified one.\n'
+                'This displays the information about that cyberware. '
+                'The name you search for does not need to be exact, '
+                'fuzzy finding is used.\n'
+                'ex: {prefix}cyber arm'
+                '```'
+            )
+        },
+        ('roll',): {
+            'function': roll,
+            'descriptions': data.get('moves', {}),
+            'output': '{mention} {function}',
+            'usage': (
+                '```{prefix}roll {{move name}} [+/- modifier]\n\n'
+                'Roll the specified move.\n'
+                'This rolls 2d6, then adds or subtracts any provided modifier '
+                'and displays relevant move text. Only the parts of the move '
+                'applicable to the roll will be shown.\n'
+                'ex: {prefix}roll mix +2'
+                '```'
+            )
+        },
+    }
 
     try:
         print('Starting sprawlbot...')
