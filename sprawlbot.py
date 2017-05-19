@@ -26,12 +26,12 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    message_text = message.content
+    message_text = message.content.strip()
     if not message_text.startswith(config.prefix):
         return
 
     command, *term = (
-        message_text.strip().lstrip(config.prefix).lower().split(maxsplit=1)
+        message_text.lstrip(config.prefix).lower().split(maxsplit=1)
     )
 
     selected = None
