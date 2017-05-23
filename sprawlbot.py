@@ -173,7 +173,7 @@ def get_config():
             }, f, indent=4, sort_keys=True)
 
     if not args.token:
-        print('Error: Token not found.')
+        print('Error: Token not found.', file=sys.stderr)
         sys.exit()
     if not args.prefix:
         args.prefix = default_prefix
@@ -188,7 +188,7 @@ def settings_dialog(default_prefix):
     )
     token = input('> ').strip()
     if not token:
-        print('No token entered...')
+        print('No token entered...', file=sys.stderr)
         sys.exit()
     prefix = input(
         'Enter the bot\'s command prefix ' +
@@ -267,5 +267,8 @@ if __name__ == '__main__':
         print('Starting sprawlbot...')
         client.run(config.token)
     except discord.errors.LoginFailure:
-        print('Could not log in to Discord. Check that your token is correct.')
+        print(
+            'Could not log in to Discord. Check that your token is correct.',
+            file=sys.stderr
+        )
         client.close()
