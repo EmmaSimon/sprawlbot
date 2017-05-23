@@ -49,7 +49,7 @@ To use the bot, you'll need a bot token from <https://discordapp.com/developers/
 
 The first time you run the script, it will ask you for your token and preferred command prefix (defaults to !), and save them into config.json.
 
-You can also edit config.json directly, or you can run the script with the token and prefix arguments.
+You can also run the script with the token and prefix arguments, and this will not save them into config.json.
 
 ```
 python3 sprawlbot.py --token <token> --prefix #
