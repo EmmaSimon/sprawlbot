@@ -43,8 +43,8 @@ async def on_message(message):
         return
 
     if not term:
-        await client.send_message(
-            message.channel, selected.get('usage').format(prefix=config.prefix)
+        await message.channel.send(
+            selected.get('usage').format(prefix=config.prefix)
         )
         return
 
@@ -69,8 +69,8 @@ async def on_message(message):
 
     if output.endswith('(range)'):
         output = output.lstrip('+')
-    await client.send_message(
-        message.channel, output
+    await message.channel.send(
+        output
     )
 
 
